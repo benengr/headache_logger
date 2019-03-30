@@ -1,0 +1,3 @@
+rootProject.name = 'headache_logger'
+
+include ':app'
