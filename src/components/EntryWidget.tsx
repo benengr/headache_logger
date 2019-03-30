@@ -12,8 +12,8 @@ export default class EntryWidget extends Component<Props> {
             <View style={styles.conatiner}>
                 <Text style={styles.header}>{Strings.entryHeader}</Text>
                 <View style={styles.buttonContainer}>
-                    <ActionButton style={styles.button}>Submit</ActionButton>
-                    <ActionButton style={styles.button}>Cancel</ActionButton>
+                    <ActionButton style={styles.button}>{Strings.buttonSubmit}</ActionButton>
+                    <ActionButton style={styles.button}>{Strings.buttonCancel}</ActionButton>
                 </View>
             </View>
         )

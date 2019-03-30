@@ -1,3 +1,5 @@
 export default {
-    entryHeader: "How bad is it?"
+    entryHeader: "How bad is it?",
+    buttonSubmit: "Submit",
+    buttonCancel: "Cancel",
 }
