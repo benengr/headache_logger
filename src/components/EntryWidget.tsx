@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {AirbnbRating} from 'react-native-elements';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import ActionButton from './ActionButton';
 import Strings from '../values/strings';
@@ -11,6 +12,12 @@ export default class EntryWidget extends Component<Props> {
         return(
             <View style={styles.conatiner}>
                 <Text style={styles.header}>{Strings.entryHeader}</Text>
+
+                <View style={styles.contentContainer}>
+                    <AirbnbRating count={Strings.severity.length}
+                        reviews={Strings.severity}/>
+                </View>
+
                 <View style={styles.buttonContainer}>
                     <ActionButton style={styles.button}>{Strings.buttonSubmit}</ActionButton>
                     <ActionButton style={styles.button}>{Strings.buttonCancel}</ActionButton>
@@ -32,6 +39,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         backgroundColor: '#888',
         textAlign: 'center',
+    },
+
+    contentContainer: {
+        backgroundColor: '#944',
     },
 
     buttonContainer: {
