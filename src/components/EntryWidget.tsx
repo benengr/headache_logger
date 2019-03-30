@@ -6,7 +6,11 @@ import Strings from '../values/strings';
 import Realm from 'realm';
 import Headache from '../models/Headache';
 
-interface Props {}
+interface Props {
+    onSubmit: () => void;
+    onCancel: () => void;
+}
+
 interface State {
     severity: number;
     realm: Realm;
@@ -33,10 +37,12 @@ export default class EntryWidget extends Component<Props, State> {
 
     handleSubmit(event: GestureResponderEvent) {
         console.log(`handleSubmit has been called with severity ${this.state.severity}`);
+        this.props.onSubmit();
     }
 
     handleCancel(event: GestureResponderEvent) {
         console.log("handleCancel has been called");
+        this.props.onCancel();
     }
 
     render() {
