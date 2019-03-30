@@ -8,7 +8,7 @@ export default class EntryWidget extends Component<Props> {
     render() {
         return(
             <View style={styles.conatiner}>
-                <Text>Hello</Text>
+                <Text style={styles.header}>How bad is the headache?</Text>
                 <View style={styles.buttonContainer}>
                     <ActionButton style={styles.button}>Submit</ActionButton>
                     <ActionButton style={styles.button}>Cancel</ActionButton>
@@ -20,21 +20,26 @@ export default class EntryWidget extends Component<Props> {
 
 const styles = StyleSheet.create({
     conatiner: {
-        height: '100%',
-        width: '100%',
-        backgroundColor: '#444',
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    },
+
+    header: {
+        fontSize: 36,
+        fontWeight: 'bold',
+        backgroundColor: '#888',
+        textAlign: 'center',
     },
 
     buttonContainer: {
         backgroundColor: "#CCC",
-        height: 100,
-        flex: 1,
         flexDirection: "row",
-        alignItems: 'flex-end',
         justifyContent: 'space-evenly'
     },
 
     button: {
-        marginBottom: 36,
+        marginBottom: 18,
+        marginTop: 18,
     }
 });
