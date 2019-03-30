@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import ActionButton from './ActionButton';
+import Strings from '../values/strings';
+
 
 interface Props {}
 export default class EntryWidget extends Component<Props> {
@@ -8,7 +10,7 @@ export default class EntryWidget extends Component<Props> {
     render() {
         return(
             <View style={styles.conatiner}>
-                <Text style={styles.header}>How bad is the headache?</Text>
+                <Text style={styles.header}>{Strings.entryHeader}</Text>
                 <View style={styles.buttonContainer}>
                     <ActionButton style={styles.button}>Submit</ActionButton>
                     <ActionButton style={styles.button}>Cancel</ActionButton>
