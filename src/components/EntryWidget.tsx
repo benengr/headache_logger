@@ -9,11 +9,11 @@ import Headache from '../models/Headache';
 interface Props {
     onSubmit: () => void;
     onCancel: () => void;
+    realm: Realm;
 }
 
 interface State {
     severity: number;
-    realm: Realm;
 }
 
 export default class EntryWidget extends Component<Props, State> {
@@ -21,7 +21,6 @@ export default class EntryWidget extends Component<Props, State> {
         super(props);
         this.state = {
             severity: 3,
-            realm: new Realm({schema: [Headache.schema]}),
         }
 
         // Bind this to class functions
@@ -37,6 +36,10 @@ export default class EntryWidget extends Component<Props, State> {
 
     handleSubmit(event: GestureResponderEvent) {
         console.log(`handleSubmit has been called with severity ${this.state.severity}`);
+        this.props.realm.write(() => {
+            const entry = new Headache(this.state.severity);
+            this.props.realm.create(Headache.schema.name, entry);
+        })
         this.props.onSubmit();
     }
 

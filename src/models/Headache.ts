@@ -13,7 +13,7 @@ export default class Headache {
     public severity: number;
     public time: number;
 
-    constructor(serverity: number, time: number | null) {
+    constructor(serverity: number, time: number | null = null) {
         this.severity = serverity;
         if(time === null) {
             this.time = Date.now();

@@ -11,6 +11,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import EntryWidget from './components/EntryWidget';
+import Headache from './models/Headache';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,9 +23,12 @@ const instructions = Platform.select({
 interface Props {}
 export default class App extends Component<Props> {
   render() {
+    const realm = new Realm({schema: [Headache.schema]});
     return (
-      <EntryWidget />
-      
+      <EntryWidget 
+          realm={realm}
+          onCancel={() => console.log("Top level cancel")}
+          onSubmit={() => console.log("Top level submit")} />
     );
   }
 }
