@@ -10,7 +10,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import EntryWidget from './components/EntryWidget';
+import {ViewLogWidget, EntryWidget} from './components';
 import Headache from './models/Headache';
 
 const instructions = Platform.select({
