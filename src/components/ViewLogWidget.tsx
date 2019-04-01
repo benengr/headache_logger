@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+import ActionButton from './ActionButton';
 
-interface Props {};
+interface Props {
+    onCancel: () => void;
+}
 
 export default class ViewLogWidget extends Component<Props> {
     render() {
         return (
-            <Text>Hello Log</Text>
+            <View>
+                <Text>Hello Log</Text>
+                <ActionButton onPress={this.props.onCancel}>Done</ActionButton>
+            </View>
         )
     }
 }

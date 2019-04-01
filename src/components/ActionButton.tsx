@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity, GestureResponderEvent} from 'react-native';
 
 interface Props {
-    style: object;
+    style?: object;
     onPress: (event: GestureResponderEvent) => void;
 }
 
