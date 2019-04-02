@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Text, View , FlatList, StyleSheet} from 'react-native';
 import ActionButton from './ActionButton';
 import Headache from '../models/Headache';
-import { Results } from 'realm';
+import Realm from 'realm';
 
 interface Props {
     onCancel: () => void;
