@@ -43,6 +43,7 @@ export default class App extends Component<Props, State> {
           onSubmit={() => this.setState({state: AppState.Log})} />);
       case AppState.Log:
           return(<ViewLogWidget 
+            realm={this.state.realm}
             onCancel={() => this.setState({state: AppState.Entry})} />);
     }
   }
